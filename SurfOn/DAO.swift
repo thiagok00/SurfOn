@@ -7,13 +7,8 @@
 //
 
 import Foundation
-import Firebase
 import UIKit
 
 class DAO {
     
-    let rootRef = FIRDatabase.database().reference()
-
-    func saveProfileInfo(name:String) {
-    }
 }

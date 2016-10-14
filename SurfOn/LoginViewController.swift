@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Surf On
+//  SurfOn
 //
 //  Created by Thiago De Angelis on 16/08/16.
 //  Copyright © 2016 puc. All rights reserved.
@@ -81,6 +81,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         else {
             let vc = CompleteRegisterViewController()
             let nav = UINavigationController(rootViewController: vc)
+            
+            if DAOAuth.user?.name != nil {
+                print("JA TINHA DADOS")
+            }
+            else {
+                print("NAO TINHA DADOS")
+            }
             self.present(nav, animated: true, completion: nil)
         }
     

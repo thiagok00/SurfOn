@@ -13,6 +13,7 @@
 		D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */; };
 		D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */; };
 		D084F7D31DAFFC3900569CCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D084F7D21DAFFC3900569CCB /* GoogleService-Info.plist */; };
+		D084F7D61DB0195000569CCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7D51DB0195000569CCB /* User.swift */; };
 		D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */; };
 		D08EC94A1DAFF74F00BFE7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08EC9481DAFF74F00BFE7B4 /* Main.storyboard */; };
 		D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 		D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteRegisterViewController.swift; sourceTree = "<group>"; };
 		D084F7D21DAFFC3900569CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D084F7D41DAFFDE400569CCB /* SurfOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfOn.entitlements; sourceTree = "<group>"; };
+		D084F7D51DB0195000569CCB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D08EC9411DAFF74F00BFE7B4 /* SurfOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08EC9491DAFF74F00BFE7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				D084F7C71DAFF8F200569CCB /* DAO.swift */,
 				D084F7C81DAFF8F200569CCB /* DAOAuth.swift */,
+				D084F7D51DB0195000569CCB /* User.swift */,
 				D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */,
 			);
 			name = Model;
@@ -264,6 +267,7 @@
 				D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */,
 				D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */,
 				D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */,
+				D084F7D61DB0195000569CCB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

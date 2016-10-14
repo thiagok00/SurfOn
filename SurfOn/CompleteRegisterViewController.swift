@@ -1,6 +1,6 @@
 //
 //  CompleteRegisterViewController.swift
-//  Surf On
+//  SurfOn
 //
 //  Created by Thiago De Angelis on 16/08/16.
 //  Copyright © 2016 puc. All rights reserved.
@@ -24,7 +24,7 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         pictureImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 100,height: 100))
         pictureImageView.layer.cornerRadius = 50
         pictureImageView.center.x = view.center.x
-        pictureImageView.center.y = view.center.y - 100
+        pictureImageView.center.y = 200
         pictureImageView.backgroundColor = UIColor.black
         pictureImageView.layer.masksToBounds = true;
         
@@ -44,13 +44,13 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         nameTextField.center.y = pictureImageView.center.y + 200
         
         lastNameTextField = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: 30))
-        lastNameTextField.placeholder = "Name"
+        lastNameTextField.placeholder = "Last Name"
         lastNameTextField.backgroundColor = UIColor.white
         lastNameTextField.center.x = view.center.x
-        lastNameTextField.center.y = nameTextField.center.y + 60
+        lastNameTextField.center.y = nameTextField.center.y + 35
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 300))
-        tableView.center.y = lastNameTextField.center.y + 60
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 150))
+        tableView.center.y = lastNameTextField.center.y + 150
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.delegate = self
         tableView.dataSource = self
@@ -115,7 +115,7 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
             print("Invalid Name")
         }
         else {
-            
+            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!, categories: [Int](), favoriteBeaches: [Int]())
             
         }
     }
