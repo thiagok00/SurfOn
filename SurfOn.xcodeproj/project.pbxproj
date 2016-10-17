@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42A99B598F1B4AD4A6CAB6CE /* libPods-SurfOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429AFD3FEDEBBCFF41307E25 /* libPods-SurfOn.a */; };
+		D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D129F1DB53B8F0064C4FC /* TabBarController.swift */; };
+		D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */; };
+		D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D12A31DB53EA40064C4FC /* Extension.swift */; };
 		D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C71DAFF8F200569CCB /* DAO.swift */; };
 		D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C81DAFF8F200569CCB /* DAOAuth.swift */; };
 		D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		429AFD3FEDEBBCFF41307E25 /* libPods-SurfOn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SurfOn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02D129F1DB53B8F0064C4FC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D02D12A31DB53EA40064C4FC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D084F7C71DAFF8F200569CCB /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D084F7C81DAFF8F200569CCB /* DAOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOAuth.swift; sourceTree = "<group>"; };
 		D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */,
+				D02D129F1DB53B8F0064C4FC /* TabBarController.swift */,
+				D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */,
 				D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */,
+				D02D12A31DB53EA40064C4FC /* Extension.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -262,10 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
+				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
 				D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */,
 				D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */,
+				D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */,
 				D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */,
+				D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */,
 				D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */,
 				D084F7D61DB0195000569CCB /* User.swift in Sources */,
 			);

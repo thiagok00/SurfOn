@@ -15,8 +15,9 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
     var nameTextField:UITextField!
     var lastNameTextField:UITextField!
     
+    
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor(red: 0, green: 136/255, blue: 204/255, alpha: 1)
+        self.view.backgroundColor = UIColor.surfAppColor()
         
         self.navigationController?.title = "Surf On"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(CompleteRegisterViewController.doneItemPressed))
@@ -62,6 +63,12 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         self.view.addSubview(nameTextField)
         self.view.addSubview(lastNameTextField)
         self.view.addSubview(tableView)
+     
+        //REMOVER, APENAS TESTE
+        if DAOAuth.user?.name != nil {
+            nameTextField.text = DAOAuth.user?.name
+            lastNameTextField.text = DAOAuth.user?.lastName
+        }
         
     }
     

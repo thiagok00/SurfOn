@@ -14,12 +14,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var passwordTextField:UITextField!
     var loginButton:UIButton!
     var registerButton:UIButton!
+    var activityIndicatorView = UIView(frame: CGRect(x: 0,y: 0,width: 200,height: 50))
+    var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //        RGB: (0, 136, 204)
-        self.view.backgroundColor = UIColor(red: 0, green: 136/255, blue: 204/255, alpha: 1)
-        
+        self.view.backgroundColor = UIColor.surfAppColor()
+    
         let titleLabel = UILabel(frame: CGRect(x: 0,y: 0,width: 400, height: 200))
         titleLabel.text = "Surf On"
         titleLabel.textAlignment = .center
@@ -65,12 +68,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(passwordTextField)
         self.view.addSubview(loginButton)
         self.view.addSubview(registerButton)
+        
+        activityIndicatorView.layer.cornerRadius = 5
+        activityIndicatorView.layer.masksToBounds = true
+        activityIndicatorView.alpha = 0.4
+        activityIndicatorView.backgroundColor = UIColor.darkGray
+        activityIndicatorView.center = view.center
+        activityIndicator.center = activityIndicatorView.center
     }
     
 
 
     func loginCallBack(error:String?) {
-        
+        activityIndicatorView.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        activityIndicator.stopAnimating()
         if (error != nil) {
             let alert = UIAlertController(title: "Error", message: error!, preferredStyle: UIAlertControllerStyle.alert)
             let cancel = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
@@ -79,23 +91,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: false, completion: nil)
         }
         else {
-            let vc = CompleteRegisterViewController()
-            let nav = UINavigationController(rootViewController: vc)
+            
+            var vc:UIViewController
             
             if DAOAuth.user?.name != nil {
-                print("JA TINHA DADOS")
+                vc = TabBarController()
             }
             else {
-                print("NAO TINHA DADOS")
+                vc = UINavigationController(rootViewController: CompleteRegisterViewController())
             }
-            self.present(nav, animated: true, completion: nil)
+            
+            self.present(vc, animated: true, completion: nil)
         }
     
     }
     
     
     func loginButtonPressed() {
+        self.view.addSubview(activityIndicatorView)
+        view.addSubview(activityIndicator)
         
+        activityIndicator.startAnimating()
         DAOAuth.login(email: emailTextField.text!, password: passwordTextField.text!, callback: loginCallBack)
         
     }
