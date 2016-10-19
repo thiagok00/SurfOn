@@ -122,8 +122,7 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
             print("Invalid Name")
         }
         else {
-            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!, categories: [Int](), favoriteBeaches: [Int]())
-            
+            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,profilePicture: pictureImageView.image ,categories: [Int](), favoriteBeaches: [Int]())
         }
     }
     

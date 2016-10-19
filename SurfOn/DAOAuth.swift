@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class DAOAuth{
 
@@ -48,11 +49,34 @@ class DAOAuth{
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: signUpCallback)
     }
 
-    class func completeRegister(name:String, lastName:String, categories:[Int], favoriteBeaches:[Int]) {
-            let dbRef = FIRDatabase.database().reference().child("users")
-            let ref = dbRef.child(user!.uid)
+    class func completeRegister(name:String, lastName:String, profilePicture:UIImage?, categories:[Int], favoriteBeaches:[Int]) {
         
-            let dict = ["name":name, "lastname":lastName]
+        let dbRef = FIRDatabase.database().reference().child("users")
+        let ref = dbRef.child(user!.uid)
+        
+        
+        let dict = ["name":name, "lastname":lastName]
+        
+        if profilePicture != nil {
+        
+            let storageRef = FIRStorage.storage().reference(forURL: "gs://surfon-73812.appspot.com")
+            let profileRef = storageRef.child("ProfilePictures").child((user?.uid)! + ".jpg")
+            let data = UIImageJPEGRepresentation(profilePicture!, 1.0)
+            
+            let _ = profileRef.put(data!, metadata: nil) { metadata, error in
+                if (error != nil) {
+                    // Uh-oh, an error occurred!
+                } else {
+                    // Metadata contains file metadata such as size, content-type, and download URL.
+                    let downloadURL = metadata!.downloadURL
+                    print(downloadURL)
+                }
+            }
+            
+
+        
+        }
+        
         
             ref.setValue(dict)
     
@@ -77,6 +101,32 @@ class DAOAuth{
 
         }
     }
+    
+    class func retrieveUserImage(callback:@escaping (Error?)->Void) {
+        let storageRef = FIRStorage.storage().reference(forURL: "gs://surfon-73812.appspot.com")
+        
+        let islandRef = storageRef.child("ProfilePictures/"+(user?.uid)!+".jpg")
+        // Create local filesystem URL
+        let localURL: NSURL! = NSURL(string: "file:///local/images/"+(user?.uid)!+".jpg")
+        
+        // Download to the local filesystem
+        let downloadTask = islandRef.write(toFile: localURL as URL) { (URL, error) -> Void in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+            } else {
+                // Local file URL for "images/island.jpg" is returned
+                let data = try? Data(contentsOf: localURL as URL)
+                user?.profileImage = UIImage(data: data!)
+                
+            }
+            callback(error)
+            print("error")
+            print(error)
+        }
+    }
+    
+    
+    
     
     
 }
