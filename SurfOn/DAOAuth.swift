@@ -60,7 +60,7 @@ class DAOAuth{
         if profilePicture != nil {
         
             let storageRef = FIRStorage.storage().reference(forURL: "gs://surfon-73812.appspot.com")
-            let profileRef = storageRef.child("ProfilePictures").child((user?.uid)! + ".jpg")
+            let profileRef = storageRef.child("ProfilePictures/"+(user?.uid)! + ".jpg")
             let data = UIImageJPEGRepresentation(profilePicture!, 1.0)
             
             let _ = profileRef.put(data!, metadata: nil) { metadata, error in
@@ -107,22 +107,35 @@ class DAOAuth{
         
         let islandRef = storageRef.child("ProfilePictures/"+(user?.uid)!+".jpg")
         // Create local filesystem URL
-        let localURL: NSURL! = NSURL(string: "file:///local/images/"+(user?.uid)!+".jpg")
         
-        // Download to the local filesystem
-        let downloadTask = islandRef.write(toFile: localURL as URL) { (URL, error) -> Void in
+        
+        islandRef.data(withMaxSize: 1 * 1024 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 // Uh-oh, an error occurred!
             } else {
-                // Local file URL for "images/island.jpg" is returned
-                let data = try? Data(contentsOf: localURL as URL)
-                user?.profileImage = UIImage(data: data!)
+                // Data for "images/island.jpg" is returned
+                let image: UIImage! = UIImage(data: data!)
+                user?.profileImage = image
                 
             }
-            callback(error)
-            print("error")
-            print(error)
+            callback(nil)
         }
+        // NSURL(string: "tmp/"+(user?.uid)!+".jpg")
+        // let localURL: URL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        // Download to the local filesystem
+//        let downloadTask = islandRef.write(toFile: localURL) { (URL, error) -> Void in
+//            if (error != nil) {
+//                // Uh-oh, an error occurred!
+//            } else {
+//                // Local file URL for "images/island.jpg" is returned
+//                let data = try? Data(contentsOf: localURL as URL)
+//                user?.profileImage = UIImage(data: data!)
+//                
+//            }
+//            callback(error)
+//            print("error")
+//            print(error)
+//        }
     }
     
     

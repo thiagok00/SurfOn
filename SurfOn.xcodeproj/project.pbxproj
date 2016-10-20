@@ -11,6 +11,8 @@
 		D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D129F1DB53B8F0064C4FC /* TabBarController.swift */; };
 		D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */; };
 		D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D12A31DB53EA40064C4FC /* Extension.swift */; };
+		D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7FDE1DB93119006F20FE /* MapViewController.swift */; };
+		D03A7FE11DB93125006F20FE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7FE01DB93125006F20FE /* FeedViewController.swift */; };
 		D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C71DAFF8F200569CCB /* DAO.swift */; };
 		D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C81DAFF8F200569CCB /* DAOAuth.swift */; };
 		D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */; };
@@ -29,6 +31,8 @@
 		D02D129F1DB53B8F0064C4FC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D02D12A31DB53EA40064C4FC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D03A7FDE1DB93119006F20FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D03A7FE01DB93125006F20FE /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D084F7C71DAFF8F200569CCB /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D084F7C81DAFF8F200569CCB /* DAOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOAuth.swift; sourceTree = "<group>"; };
 		D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */,
 				D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */,
 				D02D12A31DB53EA40064C4FC /* Extension.swift */,
+				D03A7FDE1DB93119006F20FE /* MapViewController.swift */,
+				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */,
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
@@ -279,6 +286,7 @@
 				D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */,
 				D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */,
 				D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */,
+				D03A7FE11DB93125006F20FE /* FeedViewController.swift in Sources */,
 				D084F7D61DB0195000569CCB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
