@@ -75,6 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.backgroundColor = UIColor.darkGray
         activityIndicatorView.center = view.center
         activityIndicator.center = activityIndicatorView.center
+        
     }
     
 

@@ -19,6 +19,8 @@
 		D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */; };
 		D084F7D31DAFFC3900569CCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D084F7D21DAFFC3900569CCB /* GoogleService-Info.plist */; };
 		D084F7D61DB0195000569CCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7D51DB0195000569CCB /* User.swift */; };
+		D08B5C1C1DC7647C00775854 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5C1B1DC7647C00775854 /* Category.swift */; };
+		D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */; };
 		D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */; };
 		D08EC94A1DAFF74F00BFE7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08EC9481DAFF74F00BFE7B4 /* Main.storyboard */; };
 		D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */; };
@@ -40,6 +42,8 @@
 		D084F7D21DAFFC3900569CCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D084F7D41DAFFDE400569CCB /* SurfOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfOn.entitlements; sourceTree = "<group>"; };
 		D084F7D51DB0195000569CCB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D08B5C1B1DC7647C00775854 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTBVC.swift; sourceTree = "<group>"; };
 		D08EC9411DAFF74F00BFE7B4 /* SurfOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08EC9491DAFF74F00BFE7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				D084F7C81DAFF8F200569CCB /* DAOAuth.swift */,
 				D084F7D51DB0195000569CCB /* User.swift */,
 				D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */,
+				D08B5C1B1DC7647C00775854 /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 				D02D12A31DB53EA40064C4FC /* Extension.swift */,
 				D03A7FDE1DB93119006F20FE /* MapViewController.swift */,
 				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
+				D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			files = (
 				D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */,
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
+				D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
 				D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */,
@@ -285,6 +292,7 @@
 				D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */,
 				D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */,
 				D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */,
+				D08B5C1C1DC7647C00775854 /* Category.swift in Sources */,
 				D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */,
 				D03A7FE11DB93125006F20FE /* FeedViewController.swift in Sources */,
 				D084F7D61DB0195000569CCB /* User.swift in Sources */,

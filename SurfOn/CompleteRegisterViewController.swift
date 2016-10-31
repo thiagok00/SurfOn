@@ -156,4 +156,12 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            let vc = CategoriesTBVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
 }

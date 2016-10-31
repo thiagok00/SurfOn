@@ -120,24 +120,31 @@ class DAOAuth{
             }
             callback(nil)
         }
-        // NSURL(string: "tmp/"+(user?.uid)!+".jpg")
-        // let localURL: URL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-        // Download to the local filesystem
-//        let downloadTask = islandRef.write(toFile: localURL) { (URL, error) -> Void in
-//            if (error != nil) {
-//                // Uh-oh, an error occurred!
-//            } else {
-//                // Local file URL for "images/island.jpg" is returned
-//                let data = try? Data(contentsOf: localURL as URL)
-//                user?.profileImage = UIImage(data: data!)
-//                
-//            }
-//            callback(error)
-//            print("error")
-//            print(error)
-//        }
     }
     
+    class func getAllCategories(callback:@escaping ([Category]?)->Void) {
+    
+        FIRDatabase.database().reference().child("categories").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            var categories = [Category]()
+            if value != nil {
+                let amountCategories = value?["amount"] as! Int
+                var i = 0
+                while ( i < amountCategories ) {
+                    let cat =  Category(name: value?["\(i)"] as! String)
+                    categories.append(cat)
+                    i = i + 1
+                }
+                callback(categories)
+            }
+        }) { (error) in
+            print("---ERRO DAOAUTH RETRIEVE CATEGORIES")
+            print(error.localizedDescription)
+            callback(nil)
+        }
+        
+    
+    }
     
     
     
