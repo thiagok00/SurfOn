@@ -8,6 +8,8 @@
 
 import Foundation
 import Firebase
+import UIKit
+import FirebaseAuth
 
 class User {
     
@@ -17,7 +19,7 @@ class User {
     var name:String?
     var lastName:String?
     var profileImage:UIImage?
-    var categories:[Int]?
+    var categories:[Category]?
     var favoriteBeaches:[Int]?
     
     
@@ -26,9 +28,9 @@ class User {
         self.email = email
     }
     
-    init (user:FIRUser) {
-        self.uid = user.uid
-        if let email = user.providerData.first?.email {
+    init (firebaseUser:FIRUser) {
+        self.uid = firebaseUser.uid
+        if let email = firebaseUser.providerData.first?.email {
             self.email = email
         }
         else {

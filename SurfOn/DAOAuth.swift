@@ -10,10 +10,9 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class DAOAuth{
-
-    static var user:User?
 
     class func login(email:String, password:String!,callback:@escaping (String?) ->(Void) ) {
         
@@ -25,7 +24,7 @@ class DAOAuth{
                 func retrieveCallback(error:Error?){
                     callback(error?.localizedDescription)
                 }
-                DAOAuth.user = User(user: user!)
+                Session.user = User(firebaseUser: user!)
                 DAOAuth.retrieveUserInfo(callback: retrieveCallback)
             }
         }
@@ -52,6 +51,7 @@ class DAOAuth{
     class func completeRegister(name:String, lastName:String, profilePicture:UIImage?, categories:[Int], favoriteBeaches:[Int]) {
         
         let dbRef = FIRDatabase.database().reference().child("users")
+        let user = Session.user
         let ref = dbRef.child(user!.uid)
         
         
@@ -84,14 +84,14 @@ class DAOAuth{
     
     class func retrieveUserInfo(callback:@escaping (Error?)->Void) {
         
-        let userID = DAOAuth.user?.uid
+        let userID = Session.user?.uid
         FIRDatabase.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if value != nil {
                 let name = value?["name"] as! String
                 let lastname = value?["lastname"] as! String
-                DAOAuth.user?.name = name
-                DAOAuth.user?.lastName = lastname
+                Session.user?.name = name
+                Session.user?.lastName = lastname
             }
                 callback(nil)
         }) { (error) in
@@ -105,7 +105,7 @@ class DAOAuth{
     class func retrieveUserImage(callback:@escaping (Error?)->Void) {
         let storageRef = FIRStorage.storage().reference(forURL: "gs://surfon-73812.appspot.com")
         
-        let islandRef = storageRef.child("ProfilePictures/"+(user?.uid)!+".jpg")
+        let islandRef = storageRef.child("ProfilePictures/"+(Session.user?.uid)!+".jpg")
         // Create local filesystem URL
         
         
@@ -115,7 +115,7 @@ class DAOAuth{
             } else {
                 // Data for "images/island.jpg" is returned
                 let image: UIImage! = UIImage(data: data!)
-                user?.profileImage = image
+                Session.user?.profileImage = image
                 
             }
             callback(nil)

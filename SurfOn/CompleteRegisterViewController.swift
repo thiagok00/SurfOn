@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class CompleteRegisterViewController :UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class CompleteRegisterViewController :UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, CategoriesHandler {
     
     var pictureImageView:UIImageView!
     var nameTextField:UITextField!
     var lastNameTextField:UITextField!
-    
+    var categories:[Category] = []
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.surfAppColor()
@@ -65,9 +65,9 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         self.view.addSubview(tableView)
      
         //REMOVER, APENAS TESTE
-        if DAOAuth.user?.name != nil {
-            nameTextField.text = DAOAuth.user?.name
-            lastNameTextField.text = DAOAuth.user?.lastName
+        if Session.user?.name != nil {
+            nameTextField.text = Session.user?.name
+            lastNameTextField.text = Session.user?.lastName
         }
         
     }
@@ -162,6 +162,14 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
+    }
+
+    func markedCategory(category: Category) {
+        categories.append(category)
+    }
+    
+    func unmarkedCategory(category: Category) {
+   //     categories.remove
     }
     
 }

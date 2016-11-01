@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController {
     
     func imageCallback(error:Error?) {
         if error == nil {
-            profileImageView.image = DAOAuth.user?.profileImage
+            profileImageView.image = Session.user?.profileImage
         }
     }
     
@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
         profileImageView.backgroundColor = UIColor.white
         
         let nameLabel = UILabel(frame: CGRect(x:101,y:301,width:100,height:100))
-        nameLabel.text = (DAOAuth.user?.name)! + " " + (DAOAuth.user?.lastName)!
+        nameLabel.text = (Session.user?.name)! + " " + (Session.user?.lastName)!
         
         self.view.addSubview(nameLabel)
         

@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
+protocol CategoriesHandler {
+    func markedCategory(category:Category)
+    func unmarkedCategory(category:Category)
+}
 
 class CategoriesTBVC: UITableViewController {
     
     var categories = [Category]()
+    var delegate:CategoriesHandler?
     
     override func viewDidLoad() {
-        
-        
+    
         tableView.tableFooterView = UIView(frame:CGRect.zero)
         self.tableView.isScrollEnabled = false
         
@@ -49,10 +53,13 @@ class CategoriesTBVC: UITableViewController {
        
         if (cellcheck!.accessoryType == .none) {
             cellcheck!.accessoryType = .checkmark
+            self.delegate?.markedCategory(category: categories[indexPath.row])
         }
         else {
             cellcheck!.accessoryType = .none
-            }
+            self.delegate?.unmarkedCategory(category: categories[indexPath.row])
+
+        }
     }
     
     

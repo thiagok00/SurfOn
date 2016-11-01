@@ -95,7 +95,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             var vc:UIViewController
             
-            if DAOAuth.user?.name != nil {
+            if Session.user?.name != nil {
                 vc = TabBarController()
             }
             else {
