@@ -13,7 +13,7 @@ import FirebaseAuth
 class Session {
     
     static var user:User?
-    
+    static var categories:[Category]?
     
     
 }

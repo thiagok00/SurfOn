@@ -48,7 +48,7 @@ class DAOAuth{
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: signUpCallback)
     }
 
-    class func completeRegister(name:String, lastName:String, profilePicture:UIImage?, categories:[Int], favoriteBeaches:[Int]) {
+    class func completeRegister(name:String, lastName:String, profilePicture:UIImage?, categories:[Category], favoriteBeaches:[Int]) {
         
         let dbRef = FIRDatabase.database().reference().child("users")
         let user = Session.user
@@ -56,6 +56,13 @@ class DAOAuth{
         
         
         let dict = ["name":name, "lastname":lastName]
+        
+        let categoriesDict = NSMutableDictionary()
+        for c in categories {
+            categoriesDict.addEntries(from: ["\(c.code)":"true"])
+        }
+        
+        
         
         if profilePicture != nil {
         
@@ -79,6 +86,7 @@ class DAOAuth{
         
         
             ref.setValue(dict)
+            ref.child("categories").setValue(categoriesDict)
     
     }
     
@@ -131,7 +139,7 @@ class DAOAuth{
                 let amountCategories = value?["amount"] as! Int
                 var i = 0
                 while ( i < amountCategories ) {
-                    let cat =  Category(name: value?["\(i)"] as! String)
+                    let cat =  Category(name: value?["\(i)"] as! String, code: i)
                     categories.append(cat)
                     i = i + 1
                 }

@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 
-class CompleteRegisterViewController :UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, CategoriesHandler {
+class CompleteRegisterViewController :UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var pictureImageView:UIImageView!
     var nameTextField:UITextField!
     var lastNameTextField:UITextField!
-    var categories:[Category] = []
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.surfAppColor()
@@ -77,6 +76,12 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        for c in Session.user!.categories {
+            print(c.getName())
+        }
+    }
+    
     
     func changePicButPressed() {
         
@@ -121,8 +126,9 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         if (nameTextField.text == nil || nameTextField.text!.characters.count < 4) {
             print("Invalid Name")
         }
+        //TODO TRATAR SEM CATEGORIAS
         else {
-            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,profilePicture: pictureImageView.image ,categories: [Int](), favoriteBeaches: [Int]())
+            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,profilePicture: pictureImageView.image , categories: (Session.user?.categories)!, favoriteBeaches: [Int]())
         }
     }
     
@@ -162,14 +168,6 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
-    }
-
-    func markedCategory(category: Category) {
-        categories.append(category)
-    }
-    
-    func unmarkedCategory(category: Category) {
-   //     categories.remove
     }
     
 }

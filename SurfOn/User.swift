@@ -19,13 +19,14 @@ class User {
     var name:String?
     var lastName:String?
     var profileImage:UIImage?
-    var categories:[Category]?
+    var categories:[Category]!
     var favoriteBeaches:[Int]?
     
     
     init (uid:String, email:String) {
         self.uid = uid
         self.email = email
+        self.categories = [Category]()
     }
     
     init (firebaseUser:FIRUser) {
@@ -36,6 +37,7 @@ class User {
         else {
             self.email = ""
         }
+        self.categories = [Category]()
     }
     
     
