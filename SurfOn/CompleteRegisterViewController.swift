@@ -128,7 +128,7 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         }
         //TODO TRATAR SEM CATEGORIAS
         else {
-            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,profilePicture: pictureImageView.image , categories: (Session.user?.categories)!, favoriteBeaches: [Int]())
+            DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,country:(Session.user?.country)!, profilePicture: pictureImageView.image , categories: (Session.user?.categories)!, favoriteBeaches: [Int]())
         }
     }
     
@@ -163,7 +163,12 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
+        
+        if indexPath.row == 0 {
+            let vc = CountrieTBVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if indexPath.row == 2 {
             let vc = CategoriesTBVC()
             self.navigationController?.pushViewController(vc, animated: true)
             

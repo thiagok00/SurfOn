@@ -19,6 +19,7 @@ class User {
     var name:String?
     var lastName:String?
     var profileImage:UIImage?
+    var country:Country?
     var categories:[Category]!
     var favoriteBeaches:[Int]?
     

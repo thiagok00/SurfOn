@@ -15,6 +15,9 @@
 		D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7FDE1DB93119006F20FE /* MapViewController.swift */; };
 		D03A7FE11DB93125006F20FE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A7FE01DB93125006F20FE /* FeedViewController.swift */; };
 		D05569F81DCBCC96002E1627 /* CountriesInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05569F71DCBCC96002E1627 /* CountriesInput.swift */; };
+		D05569FA1DCBCD56002E1627 /* countries.csv in Resources */ = {isa = PBXBuildFile; fileRef = D05569F91DCBCD56002E1627 /* countries.csv */; };
+		D05569FC1DCC3716002E1627 /* CountriesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */; };
+		D05569FE1DCC3808002E1627 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05569FD1DCC3808002E1627 /* Country.swift */; };
 		D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C71DAFF8F200569CCB /* DAO.swift */; };
 		D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7C81DAFF8F200569CCB /* DAOAuth.swift */; };
 		D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */; };
@@ -39,6 +42,9 @@
 		D03A7FDE1DB93119006F20FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D03A7FE01DB93125006F20FE /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D05569F71DCBCC96002E1627 /* CountriesInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesInput.swift; sourceTree = "<group>"; };
+		D05569F91DCBCD56002E1627 /* countries.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.csv; sourceTree = "<group>"; };
+		D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesTBVC.swift; sourceTree = "<group>"; };
+		D05569FD1DCC3808002E1627 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		D084F7C71DAFF8F200569CCB /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D084F7C81DAFF8F200569CCB /* DAOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOAuth.swift; sourceTree = "<group>"; };
 		D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,12 +97,14 @@
 		D084F7C41DAFF80B00569CCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D05569F91DCBCD56002E1627 /* countries.csv */,
 				D084F7C71DAFF8F200569CCB /* DAO.swift */,
 				D084F7C81DAFF8F200569CCB /* DAOAuth.swift */,
 				D084F7D51DB0195000569CCB /* User.swift */,
 				D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */,
 				D08B5C1B1DC7647C00775854 /* Category.swift */,
 				D012E3ED1DC925A9005BF769 /* Session.swift */,
+				D05569FD1DCC3808002E1627 /* Country.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				D03A7FDE1DB93119006F20FE /* MapViewController.swift */,
 				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
 				D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */,
+				D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */,
 				D05569F71DCBCC96002E1627 /* CountriesInput.swift */,
 			);
 			name = Controller;
@@ -226,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05569FA1DCBCD56002E1627 /* countries.csv in Resources */,
 				D08EC9521DAFF74F00BFE7B4 /* LaunchScreen.storyboard in Resources */,
 				D084F7D31DAFFC3900569CCB /* GoogleService-Info.plist in Resources */,
 				D08EC94F1DAFF74F00BFE7B4 /* Assets.xcassets in Resources */,
@@ -290,6 +300,7 @@
 			files = (
 				D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */,
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
+				D05569FC1DCC3716002E1627 /* CountriesTBVC.swift in Sources */,
 				D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
@@ -297,6 +308,7 @@
 				D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */,
 				D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */,
 				D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */,
+				D05569FE1DCC3808002E1627 /* Country.swift in Sources */,
 				D084F7CF1DAFF9D500569CCB /* LoginViewController.swift in Sources */,
 				D02D12A21DB53C8A0064C4FC /* ProfileViewController.swift in Sources */,
 				D05569F81DCBCC96002E1627 /* CountriesInput.swift in Sources */,

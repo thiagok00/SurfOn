@@ -26,7 +26,7 @@ class CategoriesTBVC: UITableViewController {
             }
         }
         if(Session.categories == nil) {
-            DAOAuth.getAllCategories(callback: callback)
+            DAO.getAllCategories(callback: callback)
         }
     }
     

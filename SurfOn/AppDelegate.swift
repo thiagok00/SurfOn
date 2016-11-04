@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use Firebase library to configure APIs
         FIRApp.configure()
-
+       
+        // used to input csv into firebase
+        //CountriesInput.inputCountries()
         
         return true
     }

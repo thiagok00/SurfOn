@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
         
         
 
-        DAOAuth.retrieveUserImage(callback: imageCallback)
+        DAO.retrieveUserImage(callback: imageCallback)
         profileImageView.backgroundColor = UIColor.white
         
         let nameLabel = UILabel(frame: CGRect(x:101,y:301,width:100,height:100))
