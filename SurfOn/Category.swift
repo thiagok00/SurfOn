@@ -11,11 +11,11 @@ import Foundation
 class Category: Equatable {
     
     private let name:String!
-    let code:Int
+    let id:Int
     
-    init (name:String, code:Int) {
+    init (name:String, id:Int) {
         self.name = name
-        self.code = code
+        self.id = id
     }
     
     func getName() ->String{

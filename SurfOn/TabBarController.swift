@@ -21,7 +21,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let mapVC = MapViewController()
         let firstVC = UINavigationController(rootViewController: mapVC)
         
-        let feedVC = FeedViewController()
+        let feedVC = FeedViewController(collectionViewLayout: UICollectionViewFlowLayout() )
         let secondVC = UINavigationController(rootViewController: feedVC)
         
         let profileVC = ProfileViewController()

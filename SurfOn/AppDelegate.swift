@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         // used to input csv into firebase
         //CountriesInput.inputCountries()
+        CountriesInput.inputCidades()
         
         return true
     }

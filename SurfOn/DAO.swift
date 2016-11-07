@@ -64,10 +64,14 @@ class DAO {
                 let amountCategories = value?["amount"] as! Int
                 var i = 0
                 while ( i < amountCategories ) {
-                    let cat =  Category(name: value?["\(i)"] as! String, code: i)
+                    let cat =  Category(name: value?["\(i)"] as! String, id: i)
                     categories.append(cat)
                     i = i + 1
                 }
+                func compare (c1:Category, c2:Category)->Bool {
+                    return c1.id < c2.id
+                }
+                categories.sort(by: compare)
                 callback(categories)
             }
         }) { (error) in

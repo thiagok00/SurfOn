@@ -55,11 +55,11 @@ class DAOAuth{
         let ref = dbRef.child(user!.uid)
         
         
-        let dict = ["country":country.code,"lastname":lastName,"name":name]
+        let dict = ["country_id":country.code,"lastname":lastName,"name":name]
         
         let categoriesDict = NSMutableDictionary()
         for c in categories {
-            categoriesDict.addEntries(from: ["\(c.code)":"true"])
+            categoriesDict.addEntries(from: ["\(c.id)":"true"])
         }
         
         
@@ -86,7 +86,7 @@ class DAOAuth{
         
         
             ref.setValue(dict)
-            ref.child("categories").setValue(categoriesDict)
+            ref.child("categories_id").setValue(categoriesDict)
     
     }
     

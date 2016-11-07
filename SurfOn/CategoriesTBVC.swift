@@ -28,6 +28,10 @@ class CategoriesTBVC: UITableViewController {
         if(Session.categories == nil) {
             DAO.getAllCategories(callback: callback)
         }
+        else {
+            categories = Session.categories!
+            tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
