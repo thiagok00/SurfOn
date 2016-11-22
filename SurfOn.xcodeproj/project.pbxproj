@@ -32,6 +32,7 @@
 		D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */; };
 		D08EC94F1DAFF74F00BFE7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08EC94E1DAFF74F00BFE7B4 /* Assets.xcassets */; };
 		D08EC9521DAFF74F00BFE7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08EC9501DAFF74F00BFE7B4 /* LaunchScreen.storyboard */; };
+		D0BA0EA01DE46C9F009E28AA /* ReportCategoriesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		D08EC94E1DAFF74F00BFE7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08EC9511DAFF74F00BFE7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D08EC9531DAFF74F00BFE7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategoriesTBVC.swift; sourceTree = "<group>"; };
 		E147B52240174B562642C480 /* Pods-SurfOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurfOn/Pods-SurfOn.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA6CCFF0B6B8A4336C7D234 /* Pods-SurfOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurfOn/Pods-SurfOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
 				D05569FF1DCE93C7002E1627 /* CreateReportViewController.swift */,
 				D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */,
+				D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */,
 				D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */,
 				D05569F71DCBCC96002E1627 /* CountriesInput.swift */,
 			);
@@ -303,6 +306,7 @@
 			files = (
 				D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */,
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
+				D0BA0EA01DE46C9F009E28AA /* ReportCategoriesTBVC.swift in Sources */,
 				D05569FC1DCC3716002E1627 /* CountriesTBVC.swift in Sources */,
 				D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
