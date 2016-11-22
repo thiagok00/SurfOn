@@ -114,4 +114,61 @@ class DAO {
     }
     
     
+    class func getAllBeaches(callback:@escaping ([Beach]?)->Void) {
+        
+        FIRDatabase.database().reference().child("beaches").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            var beaches = [Beach]()
+            if value != nil {
+            
+            for v in value! {
+                let beachDict = (v.1 as! NSDictionary)
+                let name = beachDict["name"] as! String
+                let latitude:CGFloat = beachDict["latitude"] as! CGFloat
+                let longitude:CGFloat = beachDict["longitude"] as! CGFloat
+                
+                let b = Beach(name: name, latitude: latitude, longitude: longitude, id:v.0 as! String)
+                beaches.append(b)
+                
+                }
+                
+//                for v in value! {
+//                    let k = v as! NSDictionary
+
+//                    
+//                }
+                
+//                func compare (c1:Country, c2:Country) -> Bool{
+//                    return c1.name < c2.name
+//                }
+//                countries.sort(by: compare)
+                
+                
+                callback(beaches)
+            }
+        }) { (error) in
+            print("---ERRO DAOAUTH RETRIEVE BEACHES")
+            print(error.localizedDescription)
+            callback(nil)
+        }
+        
+        
+    }
+    
+    class func createReport(report:Report) {
+    
+        let dbRef = FIRDatabase.database().reference().child("reports")
+        let ref = dbRef.childByAutoId()
+        
+        
+        let dict = ["author":report.author.uid,"beach_id":report.beach.id,"category_id":report.category.id, "title":report.title] as [String : Any]
+        
+    
+        ref.setValue(dict)
+    
+    }
+    
+    
+    
+    
 }

@@ -27,6 +27,9 @@
 		D084F7D61DB0195000569CCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084F7D51DB0195000569CCB /* User.swift */; };
 		D08B5C1C1DC7647C00775854 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5C1B1DC7647C00775854 /* Category.swift */; };
 		D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */; };
+		D08EAB091DE4AB270061E478 /* Beach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB081DE4AB270061E478 /* Beach.swift */; };
+		D08EAB0B1DE4AFA50061E478 /* ReportBeachesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */; };
+		D08EAB0D1DE4C1030061E478 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB0C1DE4C1030061E478 /* Report.swift */; };
 		D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */; };
 		D08EC94A1DAFF74F00BFE7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08EC9481DAFF74F00BFE7B4 /* Main.storyboard */; };
 		D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */; };
@@ -57,6 +60,9 @@
 		D084F7D51DB0195000569CCB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D08B5C1B1DC7647C00775854 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTBVC.swift; sourceTree = "<group>"; };
+		D08EAB081DE4AB270061E478 /* Beach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beach.swift; sourceTree = "<group>"; };
+		D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBeachesTBVC.swift; sourceTree = "<group>"; };
+		D08EAB0C1DE4C1030061E478 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		D08EC9411DAFF74F00BFE7B4 /* SurfOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08EC9491DAFF74F00BFE7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,12 +109,14 @@
 			children = (
 				D05569F91DCBCD56002E1627 /* countries.csv */,
 				D084F7C71DAFF8F200569CCB /* DAO.swift */,
+				D08EAB081DE4AB270061E478 /* Beach.swift */,
 				D084F7C81DAFF8F200569CCB /* DAOAuth.swift */,
 				D084F7D51DB0195000569CCB /* User.swift */,
 				D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */,
 				D08B5C1B1DC7647C00775854 /* Category.swift */,
 				D012E3ED1DC925A9005BF769 /* Session.swift */,
 				D05569FD1DCC3808002E1627 /* Country.swift */,
+				D08EAB0C1DE4C1030061E478 /* Report.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -116,17 +124,11 @@
 		D084F7C51DAFF81600569CCB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */,
+				D08EAB071DE480110061E478 /* Feed/Reports */,
+				D08EAB061DE47FC60061E478 /* Login/Register */,
 				D02D129F1DB53B8F0064C4FC /* TabBarController.swift */,
 				D02D12A11DB53C8A0064C4FC /* ProfileViewController.swift */,
-				D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */,
 				D02D12A31DB53EA40064C4FC /* Extension.swift */,
-				D03A7FDE1DB93119006F20FE /* MapViewController.swift */,
-				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
-				D05569FF1DCE93C7002E1627 /* CreateReportViewController.swift */,
-				D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */,
-				D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */,
-				D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */,
 				D05569F71DCBCC96002E1627 /* CountriesInput.swift */,
 			);
 			name = Controller;
@@ -140,6 +142,29 @@
 				D08EC9501DAFF74F00BFE7B4 /* LaunchScreen.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		D08EAB061DE47FC60061E478 /* Login/Register */ = {
+			isa = PBXGroup;
+			children = (
+				D08B5C1D1DC768A200775854 /* CategoriesTBVC.swift */,
+				D084F7CE1DAFF9D500569CCB /* LoginViewController.swift */,
+				D084F7D01DAFF9DD00569CCB /* CompleteRegisterViewController.swift */,
+				D05569FB1DCC3716002E1627 /* CountriesTBVC.swift */,
+			);
+			name = Login/Register;
+			sourceTree = "<group>";
+		};
+		D08EAB071DE480110061E478 /* Feed/Reports */ = {
+			isa = PBXGroup;
+			children = (
+				D05569FF1DCE93C7002E1627 /* CreateReportViewController.swift */,
+				D03A7FDE1DB93119006F20FE /* MapViewController.swift */,
+				D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */,
+				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
+				D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */,
+			);
+			name = Feed/Reports;
 			sourceTree = "<group>";
 		};
 		D08EC9381DAFF74F00BFE7B4 = {
@@ -309,10 +334,13 @@
 				D0BA0EA01DE46C9F009E28AA /* ReportCategoriesTBVC.swift in Sources */,
 				D05569FC1DCC3716002E1627 /* CountriesTBVC.swift in Sources */,
 				D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */,
+				D08EAB091DE4AB270061E478 /* Beach.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D0556A001DCE93C7002E1627 /* CreateReportViewController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
+				D08EAB0D1DE4C1030061E478 /* Report.swift in Sources */,
 				D012E3EE1DC925A9005BF769 /* Session.swift in Sources */,
+				D08EAB0B1DE4AFA50061E478 /* ReportBeachesTBVC.swift in Sources */,
 				D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */,
 				D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */,
 				D02D12A41DB53EA40064C4FC /* Extension.swift in Sources */,

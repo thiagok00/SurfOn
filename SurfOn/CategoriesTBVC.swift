@@ -13,18 +13,19 @@ class CategoriesTBVC: UITableViewController {
     
     var categories = [Category]()
     
+    func callback(categories:[Category]?) {
+        if categories != nil {
+            self.categories = categories!
+            self.tableView.reloadData()
+            Session.categories = categories
+        }
+    }
+    
     override func viewDidLoad() {
     
         tableView.tableFooterView = UIView(frame:CGRect.zero)
         self.tableView.isScrollEnabled = false
         
-        func callback(categories:[Category]?) {
-            if categories != nil {
-                self.categories = categories!
-                self.tableView.reloadData()
-                Session.categories = categories
-            }
-        }
         if(Session.categories == nil) {
             DAO.getAllCategories(callback: callback)
         }
