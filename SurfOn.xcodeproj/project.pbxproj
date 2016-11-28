@@ -30,6 +30,10 @@
 		D08EAB091DE4AB270061E478 /* Beach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB081DE4AB270061E478 /* Beach.swift */; };
 		D08EAB0B1DE4AFA50061E478 /* ReportBeachesTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */; };
 		D08EAB0D1DE4C1030061E478 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB0C1DE4C1030061E478 /* Report.swift */; };
+		D08EAB131DEC6AB60061E478 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB121DEC6AB60061E478 /* Location.swift */; };
+		D08EAB171DEC7C870061E478 /* ReportCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB161DEC7C870061E478 /* ReportCellView.swift */; };
+		D08EAB191DEC97BE0061E478 /* ReportCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB181DEC97BE0061E478 /* ReportCommentsVC.swift */; };
+		D08EAB1B1DEC9F850061E478 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EAB1A1DEC9F850061E478 /* Comment.swift */; };
 		D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */; };
 		D08EC94A1DAFF74F00BFE7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08EC9481DAFF74F00BFE7B4 /* Main.storyboard */; };
 		D08EC94D1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08EC94B1DAFF74F00BFE7B4 /* SurfOn.xcdatamodeld */; };
@@ -63,6 +67,10 @@
 		D08EAB081DE4AB270061E478 /* Beach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beach.swift; sourceTree = "<group>"; };
 		D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBeachesTBVC.swift; sourceTree = "<group>"; };
 		D08EAB0C1DE4C1030061E478 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		D08EAB121DEC6AB60061E478 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D08EAB161DEC7C870061E478 /* ReportCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCellView.swift; sourceTree = "<group>"; };
+		D08EAB181DEC97BE0061E478 /* ReportCommentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentsVC.swift; sourceTree = "<group>"; };
+		D08EAB1A1DEC9F850061E478 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D08EC9411DAFF74F00BFE7B4 /* SurfOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08EC9441DAFF74F00BFE7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08EC9491DAFF74F00BFE7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +125,8 @@
 				D012E3ED1DC925A9005BF769 /* Session.swift */,
 				D05569FD1DCC3808002E1627 /* Country.swift */,
 				D08EAB0C1DE4C1030061E478 /* Report.swift */,
+				D08EAB121DEC6AB60061E478 /* Location.swift */,
+				D08EAB1A1DEC9F850061E478 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 		D084F7C61DAFF81D00569CCB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D08EAB161DEC7C870061E478 /* ReportCellView.swift */,
 				D08EC9481DAFF74F00BFE7B4 /* Main.storyboard */,
 				D08EC94E1DAFF74F00BFE7B4 /* Assets.xcassets */,
 				D08EC9501DAFF74F00BFE7B4 /* LaunchScreen.storyboard */,
@@ -163,6 +174,7 @@
 				D0BA0E9F1DE46C9F009E28AA /* ReportCategoriesTBVC.swift */,
 				D03A7FE01DB93125006F20FE /* FeedViewController.swift */,
 				D08EAB0A1DE4AFA50061E478 /* ReportBeachesTBVC.swift */,
+				D08EAB181DEC97BE0061E478 /* ReportCommentsVC.swift */,
 			);
 			name = Feed/Reports;
 			sourceTree = "<group>";
@@ -329,16 +341,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08EAB191DEC97BE0061E478 /* ReportCommentsVC.swift in Sources */,
 				D03A7FDF1DB93119006F20FE /* MapViewController.swift in Sources */,
 				D084F7C91DAFF8F200569CCB /* DAO.swift in Sources */,
 				D0BA0EA01DE46C9F009E28AA /* ReportCategoriesTBVC.swift in Sources */,
 				D05569FC1DCC3716002E1627 /* CountriesTBVC.swift in Sources */,
 				D08B5C1E1DC768A200775854 /* CategoriesTBVC.swift in Sources */,
 				D08EAB091DE4AB270061E478 /* Beach.swift in Sources */,
+				D08EAB171DEC7C870061E478 /* ReportCellView.swift in Sources */,
 				D02D12A01DB53B8F0064C4FC /* TabBarController.swift in Sources */,
 				D0556A001DCE93C7002E1627 /* CreateReportViewController.swift in Sources */,
 				D084F7CA1DAFF8F200569CCB /* DAOAuth.swift in Sources */,
 				D08EAB0D1DE4C1030061E478 /* Report.swift in Sources */,
+				D08EAB131DEC6AB60061E478 /* Location.swift in Sources */,
 				D012E3EE1DC925A9005BF769 /* Session.swift in Sources */,
 				D08EAB0B1DE4AFA50061E478 /* ReportBeachesTBVC.swift in Sources */,
 				D084F7D11DAFF9DD00569CCB /* CompleteRegisterViewController.swift in Sources */,
@@ -351,6 +366,7 @@
 				D08B5C1C1DC7647C00775854 /* Category.swift in Sources */,
 				D08EC9451DAFF74F00BFE7B4 /* AppDelegate.swift in Sources */,
 				D03A7FE11DB93125006F20FE /* FeedViewController.swift in Sources */,
+				D08EAB1B1DEC9F850061E478 /* Comment.swift in Sources */,
 				D084F7D61DB0195000569CCB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

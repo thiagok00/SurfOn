@@ -12,10 +12,13 @@ import UIKit
 class Report {
     
     let author:User
-    let image:UIImage
+    var image:UIImage?
     let beach:Beach
     let category:Category
     let title:String
+    let date:NSDate
+    var id:String?
+    
     
     init (author:User, image:UIImage, beach:Beach, category:Category, title:String) {
         self.author = author
@@ -23,7 +26,14 @@ class Report {
         self.beach = beach
         self.category = category
         self.title = title
-    
+        self.date = NSDate()
+    }
+    init (author:User, beach:Beach, category:Category, title:String, date:NSDate) {
+        self.author = author
+        self.beach = beach
+        self.category = category
+        self.title = title
+        self.date = NSDate()
     }
     
     

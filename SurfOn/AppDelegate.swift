@@ -25,6 +25,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //CountriesInput.inputCountries()
        // CountriesInput.inputCidades()
         
+        DAO.getAllCategories(callback: { (categories) in
+            Session.categories = categories
+        })
+        DAO.getAllCountries(callback: { (countries) in
+        
+            Session.countries = countries
+            DAO.getAllLocations(callback: { (locations) in
+                
+                Session.locations = locations
+                DAO.getAllBeaches(callback: { (beaches) in
+                    
+                    Session.beaches = beaches
+                    for v in beaches! {
+                        print(v.name)
+                        print(v.location.cityId)
+                        print(v.location.cityName)
+                        print(v.location.country.code)
+                        print(v.location.country.name)
+                        
+                    }
+                })
+                
+            })
+        })
+        
+        
+        
+
+        
+        
+        
+        
         return true
     }
 

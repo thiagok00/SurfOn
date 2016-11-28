@@ -41,6 +41,5 @@ class User {
         self.categories = [Category]()
     }
     
-    
-    
+
 }

@@ -14,6 +14,9 @@ class Session {
     
     static var user:User?
     static var categories:[Category]?
-    
+    static var locations:[Location]?
+    static var countries:[Country]?
+    static var beaches:[Beach]?
+
     
 }

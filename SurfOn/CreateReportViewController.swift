@@ -40,9 +40,11 @@ class CreateReportViewController: UIViewController, UIImagePickerControllerDeleg
     
     func createReport() {
     
+        if photoView.backgroundImage(for: UIControlState.normal) != nil && selectedBeach != nil && selectedCategory != nil && titleTextField.text != nil {
         let report = Report(author: Session.user!, image: photoView.backgroundImage(for: UIControlState.normal)!, beach: selectedBeach!, category: selectedCategory!, title: titleTextField.text!)
         DAO.createReport(report: report)
-    
+        let _ = self.navigationController?.popViewController(animated: true)
+        }
     }
     
     

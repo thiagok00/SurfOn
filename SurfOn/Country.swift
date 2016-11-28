@@ -21,7 +21,7 @@ class Country : Equatable {
     
     
     static func == (lhs: Country, rhs: Country) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.name == rhs.name  || lhs.code == rhs.code
     }
 
     

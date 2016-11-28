@@ -12,19 +12,18 @@ import UIKit
 class Beach:Equatable {
     
     let name:String
-    let city:String
-    let country:String
     let latitude:CGFloat
     let longitude:CGFloat
     let id:String
+    let location:Location
     
-    init (name:String, latitude:CGFloat, longitude:CGFloat, id:String) {
+    
+    init (name:String, latitude:CGFloat, longitude:CGFloat, id:String, location:Location) {
         self.name = name
-        self.city = ""
-        self.country = ""
         self.latitude = latitude
         self.longitude = longitude
         self.id = id
+        self.location = location
     }
     
     static func == (lhs: Beach, rhs: Beach) -> Bool {

@@ -15,14 +15,19 @@ class CountrieTBVC: UITableViewController {
     var markedCell : UITableViewCell?
     
     
-    override func viewDidLoad() {
-        func callback(countries:[Country]?){
-            self.countries = countries!
-            self.tableView.reloadData()
-        }
-        DAO.getAllCountries(callback: callback)
+    func callback(countries:[Country]?){
+        self.countries = countries!
+        self.tableView.reloadData()
     }
     
+    override func viewDidLoad() {
+        if Session.countries != nil {
+            countries = Session.countries!
+        }
+        else {
+            DAO.getAllCountries(callback: callback)
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
