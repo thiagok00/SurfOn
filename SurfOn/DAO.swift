@@ -308,6 +308,15 @@ class DAO {
                     
                     let c = Comment(authorId: author_id, reportId: v.0 as! String, title: title, date: date, authorName: authorName)
                     
+                    getUserName(id: author_id, sender: v.0, callback: {(sender,name) in
+                        let commentId = sender as! String
+                        
+                        if name != authorName {
+                            FIRDatabase.database().reference().child("comments").child(reportId).child(commentId).child("author_name").setValue(name)
+                        }
+                        
+                    })
+                    
                     comments.append(c)
                 }
                 

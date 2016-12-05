@@ -75,15 +75,22 @@ class CountriesInput {
     
         let ref = dbRef.ref.childByAutoId()
         ref.setValue(["name":"Rio de janeiro", "country_id":"BR"])
-        inputPraias(f: ref)
+        let ref2 = dbRef.ref.childByAutoId()
+        ref2.setValue(["name":"Bahia", "country_id":"BR"])
+        inputPraias(f: ref, f2: ref2)
     }
     
-    class func inputPraias(f:FIRDatabaseReference) {
+    class func inputPraias(f:FIRDatabaseReference, f2:FIRDatabaseReference) {
     
         let dbRef = FIRDatabase.database().reference().child("beaches")
         
-        let ref = dbRef.ref.childByAutoId()
-        ref.setValue(["name":"Arpoador", "city_id":f.key])
+        dbRef.ref.childByAutoId().setValue(["name":"Arpoador", "city_id":f.key])
+        dbRef.ref.childByAutoId().setValue(["name":"Copacabana", "city_id":f.key])
+        dbRef.ref.childByAutoId().setValue(["name":"Praia do Forte", "city_id":f2.key])
+        dbRef.ref.childByAutoId().setValue(["name":"Praia da Bahia", "city_id":f2.key])
+
+        
+        
     }
     
     

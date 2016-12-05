@@ -42,12 +42,14 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         nameTextField.backgroundColor = UIColor.white
         nameTextField.center.x = view.center.x
         nameTextField.center.y = pictureImageView.center.y + 200
+        nameTextField.delegate = self
         
         lastNameTextField = UITextField(frame: CGRect(x: 0,y: 0,width: 200,height: 30))
         lastNameTextField.placeholder = "Last Name"
         lastNameTextField.backgroundColor = UIColor.white
         lastNameTextField.center.x = view.center.x
         lastNameTextField.center.y = nameTextField.center.y + 35
+        lastNameTextField.delegate = self
         
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 150))
         tableView.center.y = lastNameTextField.center.y + 150
@@ -62,15 +64,9 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         self.view.addSubview(nameTextField)
         self.view.addSubview(lastNameTextField)
         self.view.addSubview(tableView)
-     
-        //REMOVER, APENAS TESTE
-        if Session.user?.name != nil {
-            nameTextField.text = Session.user?.name
-            lastNameTextField.text = Session.user?.lastName
-        }
         
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         pictureImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage; dismiss(animated: true, completion: nil)
         
@@ -129,6 +125,8 @@ class CompleteRegisterViewController :UIViewController, UIImagePickerControllerD
         //TODO TRATAR SEM CATEGORIAS
         else {
             DAOAuth.completeRegister(name: nameTextField.text!, lastName: lastNameTextField.text!,country:(Session.user?.country)!, profilePicture: pictureImageView.image , categories: (Session.user?.categories)!, favoriteBeaches: [Int]())
+            let vc = TabBarController()
+            self.present(vc, animated: true, completion: nil)
         }
     }
     
